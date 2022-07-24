@@ -21,7 +21,6 @@ services:
       - db-store:/var/lib/mysql
 
   phpmyadmin:
-      build: ./infra/phpmyadmin
       image: phpmyadmin/phpmyadmin
       environment:
         - PMA_ARBITRARY=1
@@ -33,7 +32,7 @@ services:
       ports:
         - 4040:80
       volumes:
-        - ./phpmyadmin/sessions:/sessions
+        - ./infra/phpmyadmin/sessions:/sessions
 
 volumes:
   db-store:
